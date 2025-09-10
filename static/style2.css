@@ -1,0 +1,75 @@
+/* Container for results */
+.result-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    width: 90%;
+    margin-top: 20px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Labels & Values */
+.result-box p {
+    font-size: 18px;
+    color: #2c3e50;
+    margin: 8px 0;
+}
+
+.result-box p strong {
+    color: #007bff;
+}
+
+/* Estimated cost heading */
+h2 {
+    color: #28a745;
+    font-size: 26px;
+    margin: 20px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Cost breakdown */
+.cost-details {
+    margin-top: 15px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.cost-details p {
+    margin: 6px 0;
+}
+
+.cost-details p strong {
+    color: #e67e22;
+}
+
+/* Buttons / links */
+a {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #6f42c1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4b0082;
+    text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,10 @@
+gadget_type,brand,problem_type,severity,repair_cost
+Phone,Samsung,Screen Cracked,Low,500
+Phone,Samsung,Battery Issue,Medium,700
+Phone,Samsung,Charging Issue,High,400
+Laptop,Dell,Screen Cracked,Low,550
+Laptop,Dell,Battery Issue,Medium,750
+Laptop,Dell,Charging Issue,High,450
+Tablet,Apple,Screen Cracked,Low,600
+Tablet,Apple,Battery Issue,Medium,800
+Tablet,Apple,Charging Issue,High,500

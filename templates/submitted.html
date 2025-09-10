@@ -1,0 +1,50 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Submitted Info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Submitted Repair Info</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>Gadget:</strong> {{ submitted_data['gadget_type'] }}</li>
+        <li class="list-group-item"><strong>Brand:</strong> {{ submitted_data['brand'] }}</li>
+        <li class="list-group-item"><strong>Problem:</strong> {{ submitted_data['problem_type'] }}</li>
+        <li class="list-group-item"><strong>Severity:</strong> {{ submitted_data['severity'] }}</li>
+        <li class="list-group-item"><strong>Estimated Cost:</strong> ₹{{ submitted_data['cost'] }}</li>
+    </ul>
+    <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Estimate Another</a>
+</div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submission Result</title>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
+<body>
+
+    <h1>Repair Cost Estimation</h1>
+
+    <p><strong>Gadget Type:</strong> {{ submitted_data.gadget_type }}</p>
+    <p><strong>Brand:</strong> {{ submitted_data.brand }}</p>
+    <p><strong>Problem Type:</strong> {{ submitted_data.problem_type }}</p>
+    <p><strong>Severity:</strong> {{ submitted_data.severity }}</p>
+
+    <hr>
+
+    <h2>Estimated Costs</h2>
+    <p><strong>Total Cost:</strong> ₹{{ submitted_data.cost }}</p>
+    <p><strong>Parts Cost:</strong> ₹{{ (submitted_data.cost * 0.6) | round(2) }}</p>
+    <p><strong>Labor Cost:</strong> ₹{{ (submitted_data.cost * 0.3) | round(2) }}</p>
+    <p><strong>Tax:</strong> ₹{{ (submitted_data.cost * 0.1) | round(2) }}</p>
+
+    <br>
+    <a href="{{ url_for('index') }}">Estimate Another</a> |
+    <a href="{{ url_for('history') }}">View History</a> |
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+</body>
+</html>

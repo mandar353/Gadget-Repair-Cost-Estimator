@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gadget Fix Cost Estimator</title>
+</head>
+<body>
+    <h1>Gadget Fix Cost Estimator</h1>
+
+    <form action="/predict" method="post">
+        <label>Gadget Type:</label>
+        <select name="gadget_type">
+            <option value="Phone">Phone</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Tablet">Tablet</option>
+        </select><br><br>
+
+        <label>Brand:</label>
+        <select name="brand">
+            <option value="Samsung">Samsung</option>
+            <option value="Dell">Dell</option>
+            <option value="Apple">Apple</option>
+        </select><br><br>
+
+        <label>Age (Years):</label>
+        <input type="number" name="age" required><br><br>
+
+        <label>Problem Type:</label>
+        <select name="problem_type">
+            <option value="Screen Cracked">Screen Cracked</option>
+            <option value="Battery Issue">Battery Issue</option>
+            <option value="Charging Issue">Charging Issue</option>
+        </select><br><br>
+
+        <label>Severity:</label>
+        <select name="severity">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select><br><br>
+
+        <input type="submit" value="Predict Repair Cost">
+    </form>
+
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>

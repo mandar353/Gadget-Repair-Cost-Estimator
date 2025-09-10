@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gadget Fix Cost Estimator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    {% if session['username'] %}
+        <p>Welcome, {{ session['username'] }} | <a href="{{ url_for('logout') }}">Logout</a></p>
+    {% endif %}
+
+    <h1>Estimate Repair Cost</h1>
+
+    <form method="POST">
+        <label>Gadget Type:</label>
+        <select name="gadget_type">
+            {% for gadget in gadget_types %}
+            <option value="{{ gadget }}">{{ gadget }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label>Brand:</label>
+        <select name="brand">
+            {% for brand in phone_brands + laptop_brands %}
+            <option value="{{ brand }}">{{ brand }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label>Problem Type:</label>
+        <select name="problem_type">
+            {% for problem in problem_types %}
+            <option value="{{ problem }}">{{ problem }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label>Severity:</label>
+        <select name="severity">
+            {% for severity in severity_levels %}
+            <option value="{{ severity }}">{{ severity }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <input type="submit" value="Estimate Cost">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Repair History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Repair History for {{ session['username'] }}</h2>
+    <table class="table table-bordered table-striped mt-3">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Gadget</th>
+                <th>Brand</th>
+                <th>Problem</th>
+                <th>Severity</th>
+                <th>Total Cost (₹)</th>
+                <th>Parts (₹)</th>
+                <th>Labor (₹)</th>
+                <th>Tax (₹)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record[0] }}</td>
+                <td>{{ record[2] }}</td>
+                <td>{{ record[3] }}</td>
+                <td>{{ record[4] }}</td>
+                <td>{{ record[5] }}</td>
+                <td>{{ record[6] }}</td>
+                <td>{{ record[7] }}</td>
+                <td>{{ record[8] }}</td>
+                <td>{{ record[9] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Estimator</a>
+</div>
+</body>
+</html>
